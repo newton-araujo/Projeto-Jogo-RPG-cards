@@ -33,7 +33,7 @@ const characters_dark = {
         "name":"Texts",
         "type":"dark",
         "hp":120,
-        "power":30,
+        "power":30
     },
 
     "character2":{
@@ -41,7 +41,7 @@ const characters_dark = {
         "name":"Liqk",
         "type":"dark",
         "hp":140,
-        "power":25,
+        "power":25
     },
 
     "character3":{
@@ -49,11 +49,9 @@ const characters_dark = {
         "name":"Fraka",
         "type":"dark",
         "hp":110,
-        "power":10,
+        "power":10
     }
-
 }
-
 
 //Show Character
 async function showCharacters(character) {
@@ -64,15 +62,48 @@ async function showCharacters(character) {
 
             console.log("\n")
 
-            console.log(` character ${element.id} \n name: ${element.name} \n Hp: ${element.hp} \n power: ${element.power}`) 
+            console.log (`character ${element.id} \n name: ${element.name} \n Hp: ${element.hp} \n power: ${element.power} \n type: ${element.type}`) 
         }
+
+    }
+}
+
+
+//Character for to play
+async function chooseCharacter(typeCharacter) {
+
+    const numberCharacter = Math.floor(Math.random() * 3) + 1
+
+    try {
+
+        if (numberCharacter === 1) {
+           return typeCharacter.character1
+        }
+
+        else if (numberCharacter === 2) { 
+            return typeCharacter.character2
+        } 
+        else if (numberCharacter === 3) {
+            return typeCharacter.character3
+        }
+        else {
+            return 'Persongem não encontrado!'
+        }
+        
+    } catch (error) {
+        return "Campos não foram preenchidos" + error
     }
 
 }
+
+
+console.log()
+
 
 //exports const and functions
 export {
     showCharacters,
     characters_dark,
     characters_light,
+    chooseCharacter,
 }
