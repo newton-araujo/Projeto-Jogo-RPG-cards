@@ -9,7 +9,10 @@ const cardOne = await chooseCharacter(cardsDarks)
 
 
 async function showChosenCharacter(character) {
-    console.log(`------card----- \n- Name: ${character.name} - \n- HP: ${character.hp}     -\n- Power: ${character.power}   -\n- Type: ${character.type}  -    \n---------------`)
+
+    if(character.type === 'dark')
+        console.log(` ----card🧙----  \n- Name: ${character.name} - \n- HP: ${character.hp}     -\n- Power: ${character.power}   -\n- Type: ${character.type}  -    \n---------------`)
+
 }
 
 
